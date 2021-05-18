@@ -1,0 +1,20 @@
+MEMBUAT APLIKASI PENJUALAN HEWAN QURBAN DAN AQIQAH HABIB 
+
+Menggunakan fremwork CI4
+
+fungsi tambahan : Migration, sedeer
+  - Yang berfunsi memigrate database menggunakan fitur dari Codeigniter 4
+
+  - Controller, Model, dll bisa dibuat menggunakan CLI Generators
+
+  - Create Migrate referensi youtube WPU - Tutorial CodeIgniter 4 untuk pemula | 13.
+    - php spark migrate:create Hbb_Products
+      - php spark migrate // untuk menjalankan semua migrate
+      - php spark migrate "namemigrate" // untuk menjalanjan migrate yang dipilih
+
+  - Seeder Untuk meng Insert data kedalam tabel di database yang sudah di create dari migrate
+    "Tapi tidak digunakan dalam aplikasi ini!"
+
+  - fitur Filter tampulan qurban menggunakan controller Pages.php
+
+  
