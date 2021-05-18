@@ -50,6 +50,7 @@ class Transaction extends BaseController
 	public function terkirim()
 	{
 		$data = [
+			'nav' => NULL,
 			'title' => 'Pesanan Terkirim',
 			'pesanan' => $this->transaction->where('code_transaction', session('request'))->first()
 		];
@@ -59,6 +60,7 @@ class Transaction extends BaseController
 	public function pembayaran($code_transaction = NULL)
 	{
 		$data = [
+			'nav' => NULL,
 			'title' => 'Pesanan Konfirmasi',
 			'pesanan' => $this->transaction->where('code_transaction', $code_transaction)->first(),
 			'validation' => \Config\Services::validation()
@@ -126,6 +128,7 @@ class Transaction extends BaseController
 	{
 		// echo "cetak";
 		$data = [
+			'nav' => NULL,
 			'title' => 'Pesanan Terkirim',
 			'pesanan' => $this->transaction->where('code_transaction', $code)->first()
 		];

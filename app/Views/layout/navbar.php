@@ -10,17 +10,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div id="marker"></div>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?= base_url(); ?>/">Home</a>
+                    <a class="nav-link" data-nav="<?= $nav; ?>" aria-current="page" href="<?= base_url(); ?>/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?= base_url(); ?>/qurban">Qurban</a>
+                    <a class="nav-link" data-nav="<?= $nav; ?>" aria-current="page" href="<?= base_url(); ?>/qurban">Qurban</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?= base_url(); ?>/aqiqah">Aqiqah</a>
+                    <a class="nav-link" data-nav="<?= $nav; ?>" aria-current="page" href="<?= base_url(); ?>/aqiqah">Aqiqah</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?= base_url(); ?>/pages/about">Kontak Kami</a>
+                    <a class="nav-link" data-nav="<?= $nav; ?>" aria-current="page" href="<?= base_url(); ?>/pages/about">Kontak Kami</a>
                 </li>
             </ul>
             <a class="btn py-0 mx-1" aria-current="page" href="<?= base_url(); ?>/pages/keranjang"><i class="fa fa-shopping-cart fs-3"></i></a>

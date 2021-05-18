@@ -34,6 +34,7 @@ class Aqiqah extends BaseController
     // $aqiqah = $this->aqiqahModel->findAll();
 
     $data = [
+      'nav' => 'Aqiqah',
       'title' => 'Habid | Admin - Aqiqah',
       'aqiqah' => $this->productsModel->getProdukAqiqah()
     ];
@@ -43,6 +44,7 @@ class Aqiqah extends BaseController
   public function detail($slug)
   {
     $data = [
+      'nav' => 'Aqiqah',
       'title' => 'Detail',
       'aqiqah' => $this->productsModel->getProdukAqiqah($slug)
     ];
@@ -61,6 +63,7 @@ class Aqiqah extends BaseController
     // $produk_type = new \App\Models\productsTypeModel();
 
     $data = [
+      'nav' => 'Aqiqah',
       'title' => 'Tambah Data Aqiqah',
       'validation' => \Config\Services::validation()
     ];
@@ -159,6 +162,7 @@ class Aqiqah extends BaseController
   {
     // Memanggil Model yang dibuhkan hanya do method ini
     $data = [
+      'nav' => 'Aqiqah',
       'title' => 'Edit Data Aqiqah',
       'validation' => \Config\Services::validation(),
       'aqiqah' => $this->productsModel->getProdukAqiqah($slug)

@@ -274,20 +274,16 @@ function kurang(e) {
     location.reload();
 }
 function hapus(e) {
-    if (confirm('Apakah yakin ingin dikeluarkan dari keranjang?') == false) {
-        return false;
-    } else {
-        let dt = e.parentElement.parentElement.querySelectorAll("input")
-        // buat key
-        let produk = dt[0].defaultValue
-        let slug = dt[1].defaultValue;
-        let detail = {};
-        detail.nama = dt[2].defaultValue;
-        detail.harga = dt[3].defaultValue;
-        detail.qtt = parseInt(dt[4].defaultValue) - 1; // Rubah ke integer
-        syncLocalStorage('DELETE', produk, slug, detail);
-        location.reload();
-    }
+    let dt = e.parentElement.parentElement.querySelectorAll("input")
+    // buat key
+    let produk = dt[0].defaultValue
+    let slug = dt[1].defaultValue;
+    let detail = {};
+    detail.nama = dt[2].defaultValue;
+    detail.harga = dt[3].defaultValue;
+    detail.qtt = parseInt(dt[4].defaultValue) - 1; // Rubah ke integer
+    syncLocalStorage('DELETE', produk, slug, detail);
+    location.reload();
 }
 // Menghapus semua isi localstorage setelah menekan tombol pesan
 const kirimPesanan = document.querySelector('#kirim-pesanan');

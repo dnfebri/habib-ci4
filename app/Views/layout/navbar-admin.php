@@ -10,20 +10,21 @@
     </button>
     <div class="collapse navbar-collapse" style="width: 100%;" id="navbarNavAltMarkup">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div id="marker"></div>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<?= base_url(); ?>/admin">Home</a>
+          <a class="nav-link" data-nav="<?= $nav; ?>" aria-current="page" href="<?= base_url(); ?>/admin">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="<?= base_url(); ?>/admin/qurban">Qurban</a>
+          <a class="nav-link" data-nav="<?= $nav; ?>" aria-current="page" href="<?= base_url(); ?>/admin/qurban">Qurban</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="<?= base_url(); ?>/admin/aqiqah">Aqiqah</a>
+          <a class="nav-link" data-nav="<?= $nav; ?>" aria-current="page" href="<?= base_url(); ?>/admin/aqiqah">Aqiqah</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="<?= base_url(); ?>/admin/transaction">Pesanan</a>
+          <a class="nav-link" data-nav="<?= $nav; ?>" aria-current="page" href="<?= base_url(); ?>/admin/transaction">Pesanan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="<?= base_url(); ?>/admin/home/about">Kontak Kami</a>
+          <a class="nav-link" data-nav="<?= $nav; ?>" aria-current="page" href="<?= base_url(); ?>/admin/home/about">Kontak Kami</a>
         </li>
       </ul>
       <a class="nav-link" aria-current="page" href="<?= base_url(); ?>/logout"><b>Logout</b></a>

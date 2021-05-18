@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="<?= base_url(); ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?= base_url(); ?>/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/css/styles.css">
 
     <title><?= $title; ?></title>
 </head>
@@ -23,6 +24,26 @@
 
     <?= $this->renderSection('content'); ?>
 
+
+    <script>
+        let marker = document.querySelector('#marker');
+        let item = document.querySelectorAll('nav ul li');
+
+        function indikator(e) {
+            marker.style.left = e.offsetLeft + "px";
+            marker.style.width = e.offsetWidth + "px";
+        }
+
+        item.forEach(link => {
+            if (link.querySelector('a').innerHTML === link.querySelector('a').getAttribute('data-nav')) {
+                link.querySelector('a').classList.toggle('active');
+            }
+
+            link.addEventListener('mouseenter', (e) => {
+                indikator(e.target);
+            })
+        });
+    </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

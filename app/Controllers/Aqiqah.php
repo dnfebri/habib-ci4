@@ -20,6 +20,7 @@ class Aqiqah extends BaseController
   public function index()
   {
     $data = [
+      'nav' => 'Aqiqah',
       'title' => 'Habid | Aqiqah',
       'aqiqah' => $this->productsModel->getProdukAqiqah()
     ];
@@ -30,6 +31,7 @@ class Aqiqah extends BaseController
   {
 
     $data = [
+      'nav' => 'Aqiqah',
       'title' => 'Detail',
       'aqiqah' => $this->productsModel->getProdukAqiqah($slug)
     ];

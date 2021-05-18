@@ -7,6 +7,7 @@ class Pages extends BaseController
     public function index()
     {
         $data = [
+            'nav' => 'Home',
             'title' => 'Habid | Hasana Alam Batam Indah Bertuan'
         ];
         return view('pages/index', $data);
@@ -23,6 +24,7 @@ class Pages extends BaseController
         }
 
         $data = [
+            'nav' => 'Qurban',
             'qurban' => $dataFilter
         ];
         return view('filterqurban', $data);
@@ -31,6 +33,7 @@ class Pages extends BaseController
     public function about()
     {
         $data = [
+            'nav' => 'Kontak Kami',
             'title' => 'Abaut Me'
         ];
         echo view('pages/about', $data);
@@ -39,6 +42,7 @@ class Pages extends BaseController
     public function keranjang()
     {
         $data = [
+            'nav' => NULL,
             'title' => 'Keranjang'
         ];
         echo view('pages/keranjang', $data);
@@ -53,6 +57,7 @@ class Pages extends BaseController
         $transaction = new \App\Models\TransactionModel();
 
         $data = [
+            'nav' => NULL,
             'title' => 'Pesanan',
             'pesanan' => $transaction->where('code_transaction', $codeTransaction)->first()
         ];

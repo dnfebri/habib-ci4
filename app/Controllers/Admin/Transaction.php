@@ -16,6 +16,7 @@ class Transaction extends BaseController
   public function index()
   {
     $data = [
+      'nav' => 'Pesanan',
       'title' => 'Data Pesanan',
       'transaction' => $this->transaction->getTransaction()
     ];
@@ -31,6 +32,7 @@ class Transaction extends BaseController
     $detailConfirm = $confirmation->where(['transaction_id' => $code])->orderBy('id', 'desc')->findAll();
 
     $data = [
+      'nav' => 'Pesanan',
       'title' => 'Data Pesanan',
       'transaction' => $this->transaction->getTransaction($code),
       'confirmation' => $detailConfirm
@@ -56,6 +58,7 @@ class Transaction extends BaseController
     $confirmation = new \App\Models\ConfirmationModel();
     $detailConfirm = $confirmation->where('id', $id)->first();
     $data = [
+      'nav' => 'Pesanan',
       'confirm' => $detailConfirm
     ];
     return view('admin/pesanan/confirmview', $data);

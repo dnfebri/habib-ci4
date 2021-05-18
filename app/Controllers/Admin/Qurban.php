@@ -29,6 +29,7 @@ class Qurban extends BaseController
     // $aqiqah = $this->aqiqahModel->findAll();
 
     $data = [
+      'nav' => 'Qurban',
       'title' => 'Habid | Admin - Qurban',
       'qurban_type' => $this->qurban_type->where('id !=', 1)->findAll(),
       'qurban' => $this->productsModel->getProduk()
@@ -39,6 +40,7 @@ class Qurban extends BaseController
   public function detail($slug)
   {
     $data = [
+      'nav' => 'Qurban',
       'title' => 'Habid | Detail Qurban',
       'qurban' => $this->productsModel->getProduk($slug)
     ];
@@ -51,6 +53,7 @@ class Qurban extends BaseController
     // $qurban_type = new \App\Models\Qurban_typeModel();
 
     $data = [
+      'nav' => 'Qurban',
       'title' => 'Tambah Data Aqiqah',
       'qurban_type' => $this->qurban_type->where('id !=', 1)->findAll(),
       'validation' => \Config\Services::validation()
@@ -149,6 +152,7 @@ class Qurban extends BaseController
     // Memanggil Model yang dibuhkan hanya do method ini
     $produk_type = new \App\Models\ProductstypeModel();
     $data = [
+      'nav' => 'Qurban',
       'title' => 'Edit Data Qurban',
       'validation' => \Config\Services::validation(),
       'qurban_type' => $produk_type->where('id !=', 1)->findAll(),

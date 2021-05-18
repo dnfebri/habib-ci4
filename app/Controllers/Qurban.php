@@ -21,6 +21,7 @@ class Qurban extends BaseController
   public function index()
   {
     $data = [
+      'nav' => 'Qurban',
       'title' => 'Habid | Page Qurban',
       'qurban_type' => $this->qurban_type->where('id !=', 1)->findAll(),
       'qurban' => $this->productsModel->getProduk()
@@ -32,6 +33,7 @@ class Qurban extends BaseController
   public function detail($slug)
   {
     $data = [
+      'nav' => 'Qurban',
       'title' => 'Habid | Detail Qurban',
       'qurban' => $this->productsModel->getProduk($slug)
     ];
