@@ -52,6 +52,7 @@ const fil = document.querySelector('#filter');
 if (fil) {
     fil.addEventListener('change', filter)
 }
+
 function filter() {
     // const fil = document.querySelector('#filter');
     const content = document.querySelector('#content');
@@ -134,8 +135,9 @@ function syncLocalStorage(action, PRODUK_STORAGE, item, detail) {
 
 function addKeranjang(produk) {
     //Check if localstorage API is available
-    if (typeof (Storage) !== "undefined") { console.log("local storage available") }
-    else {
+    if (typeof (Storage) !== "undefined") {
+        console.log("local storage available")
+    } else {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -261,6 +263,7 @@ function tambah(e) {
     syncLocalStorage('UPDATE', produk, slug, detail);
     location.reload();
 }
+
 function kurang(e) {
     let dt = e.parentElement.parentElement.querySelectorAll("input")
     // buat key
@@ -273,17 +276,30 @@ function kurang(e) {
     syncLocalStorage('UPDATE', produk, slug, detail);
     location.reload();
 }
+
 function hapus(e) {
-    let dt = e.parentElement.parentElement.querySelectorAll("input")
-    // buat key
-    let produk = dt[0].defaultValue
-    let slug = dt[1].defaultValue;
-    let detail = {};
-    detail.nama = dt[2].defaultValue;
-    detail.harga = dt[3].defaultValue;
-    detail.qtt = parseInt(dt[4].defaultValue) - 1; // Rubah ke integer
-    syncLocalStorage('DELETE', produk, slug, detail);
-    location.reload();
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let dt = e.parentElement.parentElement.querySelectorAll("input")
+            // buat key
+            let produk = dt[0].defaultValue
+            let slug = dt[1].defaultValue;
+            let detail = {};
+            detail.nama = dt[2].defaultValue;
+            detail.harga = dt[3].defaultValue;
+            detail.qtt = parseInt(dt[4].defaultValue) - 1; // Rubah ke integer
+            syncLocalStorage('DELETE', produk, slug, detail);
+            location.reload();
+        }
+    })
 }
 // Menghapus semua isi localstorage setelah menekan tombol pesan
 const kirimPesanan = document.querySelector('#kirim-pesanan');
