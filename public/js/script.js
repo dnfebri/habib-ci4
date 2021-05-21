@@ -20,6 +20,25 @@ function priviewImg() {
 
 // ==============================================================================>
 // Detail Confirmation Pesanan Form ADMIN =======================================>
+let hapusProduk = document.querySelector('#hapus-produk')
+if (hapusProduk) {
+    hapusProduk.addEventListener('click', function () {
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            // text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('form-hapus').submit();
+            }
+        })
+    })
+}
+
 const confirm = document.querySelectorAll('#view-confirm');
 if (confirm) {
     for (let i = 0; i < confirm.length; i++) {

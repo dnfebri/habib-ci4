@@ -32,11 +32,13 @@
 
               <?php if (logged_in()) : ?>
                 <a href="<?= base_url(); ?>/admin/qurban/edit/<?= $qurban['slug']; ?>" class="btn btn-warning">Edit</a>
+                <button type="button" class="btn btn-danger" id="hapus-produk">Hapus</button>
+
                 <!-- Form teknik spoofing delete -->
-                <form action="<?= base_url(); ?>/admin/qurban/hapus/<?= $qurban['id']; ?>" method="post" class="d-inline">
+                <form action="<?= base_url(); ?>/admin/qurban/hapus/<?= $qurban['id']; ?>" method="post" class="d-none" id="form-hapus">
                   <?= csrf_field(); ?>
                   <input type="hidden" name="_method" value="DELETE">
-                  <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda yakin?')">Hapus</button>
+                  <button type="submit" class="btn btn-danger">Hapus</button>
                 </form>
               <?php endif; ?>
 
